@@ -8,5 +8,6 @@ int main() {
     char dest[20];
     ft_strcpy(dest, str);
     printf("Copied string: %s\n", dest);
+    printf(".");
     return 0;
 }
