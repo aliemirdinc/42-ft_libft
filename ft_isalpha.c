@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 15:28:37 by marvin            #+#    #+#             */
-/*   Updated: 2024/08/06 15:28:37 by marvin           ###   ########.fr       */
+/*   Created: 2024/08/06 17:14:58 by marvin            #+#    #+#             */
+/*   Updated: 2024/08/06 17:14:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H /* if not defined libft.h , ise aşağıdaki komutu çalıştır*/
-#define LIBFT_H /*öyleyse tanımla libft.h'ı*/
-
-#include <stddef.h>
-
-size_t ft_strlen(const char *s);
-char *ft_strcpy(char *dst, const char *src);
-
-#endif
+int	ft_isalpha(int c)
+{
+	if ((c <= 'Z' && c >= 'A') || (c <= 'z' && c >= 'a'))
+		return (1);
+	return (0);
+}

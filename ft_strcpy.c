@@ -1,9 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/06 15:28:09 by marvin            #+#    #+#             */
+/*   Updated: 2024/08/06 15:28:09 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
-    char *d = dst;
-    while ((*d++ = *src++))
-        ;
-    return dst;
+	char	*d;
+
+	d = dst;
+	while (*src != '\0')
+	{
+		*d = *src;
+		d++;
+		src++;
+	}
+	return (dst);
 }
