@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-void *ft_memset(void *ptr, int value, size_t num)
+void	*ft_memset(void *ptr, int value, size_t num)
 {
-	unsigned char *a;
-	size_t i;
+	unsigned char	*a;
+	size_t			i;
 
 	a = (unsigned char *) ptr;
 	i = 0;
@@ -25,14 +25,5 @@ void *ft_memset(void *ptr, int value, size_t num)
 		i++;
 		num--;
 	}
-	return(ptr);
-}
-
-#include <stdio.h>
-int main()
-{
-	char a[] = "selam";
-	printf("ilk deger %s\n", a);
-	char *b = ft_memset(a, 353, 50);
-	printf("son deger %s\n", b);
+	return (ptr);
 }
