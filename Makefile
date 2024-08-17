@@ -1,7 +1,8 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_strlen.c ft_strcpy.c
+SRCS =ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_strlen.c
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
