@@ -4,14 +4,8 @@
 
 int main()
 {
-	char c = 'a';
-	char d = 'b';
-	char e = 'c';
-	char f = ' ';
+	const char *a = "merhaba";
+	const char *b = "";
 
-	printf("%c\n",ft_toupper(c));
-	printf("%c\n",ft_toupper(d));
-	printf("%c\n",ft_toupper(e));
-	printf("%c\n",ft_toupper(f));
-
+	printf("iki stringin ilk farkli karakterleri arasindaki fark = %d\n", ft_strncmp(a, b, 7));
 }
