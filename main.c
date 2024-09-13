@@ -1,15 +1,16 @@
 // main.c
 #include "libft.h"
 #include <stdio.h>
-int main()
-{
-	const char *haystack;
-	const char *needle;
-	size_t len;
 
-	haystack = "Ali Emir geliyor ve gidiyor";
-	needle = "li";
-	len = 30;
-	printf("ilk haystack noktasi = %p", haystack);
-	printf("needle'in ilk bulundugu nokta = %p\n", ft_strnstr(haystack, needle, len));
+int main() 
+{
+    char str1[] = "   -12345abc";
+    char str2[] = "  9876";
+    char str3[] = " 42 is the answer";
+    
+    printf("Result 1: %d\n", ft_atoi(str1));  // -12345
+    printf("Result 2: %d\n", ft_atoi(str2));  // 9876
+    printf("Result 3: %d\n", ft_atoi(str3));  // 42
+    
+    return 0;
 }
