@@ -1,11 +1,15 @@
 // main.c
 #include "libft.h"
 #include <stdio.h>
-
 int main()
 {
-	const char *a = "merhaba";
-	const char *b = "";
+	const char *haystack;
+	const char *needle;
+	size_t len;
 
-	printf("iki stringin ilk farkli karakterleri arasindaki fark = %d\n", ft_strncmp(a, b, 7));
+	haystack = "Ali Emir geliyor ve gidiyor";
+	needle = "li";
+	len = 30;
+	printf("ilk haystack noktasi = %p", haystack);
+	printf("needle'in ilk bulundugu nokta = %p\n", ft_strnstr(haystack, needle, len));
 }
