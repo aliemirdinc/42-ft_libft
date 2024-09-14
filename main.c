@@ -2,15 +2,30 @@
 #include "libft.h"
 #include <stdio.h>
 
-int main() 
-{
-    unsigned char *ptr = ft_calloc(3, 1);
-    int i = 0;
+#include <string.h> // strdup ile karşılaştırma için
 
-    while(i < 3)
-    {
-        printf("actigimiz ptr pointerinin gosterdigi degerler = %d\n", *ptr);
-        ptr++;
-        i++;
-    }
+int	main(void)
+{
+	const char *original = "Ecole 42";
+	char *copy;
+
+	// ft_strdup ile test
+	copy = ft_strdup(original);
+	if (copy == NULL)
+	{
+		printf("Memory allocation failed or original string is NULL.\n");
+		return (1);
+	}
+	printf("Original: %s\n", original);
+	printf("Copied (ft_strdup): %s\n", copy);
+
+	// strdup ile karşılaştırma
+	char *system_copy = strdup(original);
+	printf("Copied (strdup): %s\n", system_copy);
+
+	// Bellek boşaltma
+	free(copy);
+	free(system_copy);
+
+	return (0);
 }
