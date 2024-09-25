@@ -1,44 +1,29 @@
 // main.c
-#include <stdio.h>
-#include "libft.h"  // ft_strjoin fonksiyonunun tanımlı olduğu header dosyanız
+#include "libft.h"
+#include <stdio.h>  // printf kullanmak için
+#include <stdlib.h> // free kullanmak için
 
+char	*ft_itoa(int n);  // ft_itoa fonksiyonunun prototipi
 
-// Burada, ft_strdup ve ft_substr fonksiyonlarının çalıştığını varsayıyorum.
-// Bunları kendi projendeki şekilde tanımlaman gerektiğini unutma.
-
-int main(void)
+int	main(void)
 {
-    char *s1 = "!!hello!!";
-    char *set = "!";
-    char *result;
+	int values[] = {0, 123, -123, 2147483647, -2147483648}; // Test edilecek sayılar
+	char *result;
+	int i;
 
-    result = ft_strtrim(s1, set);
-    printf("Input: \"%s\"\nSet: \"%s\"\nResult: \"%s\"\n", s1, set, result);
-    free(result);
-
-    s1 = "   42 school   ";
-    set = " ";
-    result = ft_strtrim(s1, set);
-    printf("Input: \"%s\"\nSet: \"%s\"\nResult: \"%s\"\n", s1, set, result);
-    free(result);
-
-    s1 = "abcdef";
-    set = "xyz";
-    result = ft_strtrim(s1, set);
-    printf("Input: \"%s\"\nSet: \"%s\"\nResult: \"%s\"\n", s1, set, result);
-    free(result);
-
-    s1 = "xxxxxyhello worldyyxxxxx";
-    set = "yx";
-    result = ft_strtrim(s1, set);
-    printf("Input: \"%s\"\nSet: \"%s\"\nResult: \"%s\"\n", s1, set, result);
-    free(result);
-
-    s1 = "";
-    set = "!";
-    result = ft_strtrim(s1, set);
-    printf("Input: \"%s\"\nSet: \"%s\"\nResult: \"%s\"\n", s1, set, result);
-    free(result);
-
-    return 0;
+	for (i = 0; i < 5; i++)
+	{
+		result = ft_itoa(values[i]); // Her bir sayı için ft_itoa çağrılıyor
+		if (result)
+		{
+			printf("ft_itoa(%d) = %s\n", values[i], result); // Sonucu yazdır
+			free(result); // Malloc ile ayırdığımız hafızayı serbest bırak
+		}
+		else
+		{
+			printf("Memory allocation failed for %d\n", values[i]); // Hafıza hatası olursa uyar
+		}
+	}
+	return (0);
 }
+
