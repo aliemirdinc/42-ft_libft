@@ -3,27 +3,44 @@
 #include <stdio.h>  // printf kullanmak için
 #include <stdlib.h> // free kullanmak için
 
-char	*ft_itoa(int n);  // ft_itoa fonksiyonunun prototipi
-
-int	main(void)
+// Karakteri büyük harfe çeviren fonksiyon
+char toupper_function(unsigned int i, char c)
 {
-	int values[] = {0, 123, -123, 2147483647, -2147483648}; // Test edilecek sayılar
-	char *result;
-	int i;
-
-	for (i = 0; i < 5; i++)
-	{
-		result = ft_itoa(values[i]); // Her bir sayı için ft_itoa çağrılıyor
-		if (result)
-		{
-			printf("ft_itoa(%d) = %s\n", values[i], result); // Sonucu yazdır
-			free(result); // Malloc ile ayırdığımız hafızayı serbest bırak
-		}
-		else
-		{
-			printf("Memory allocation failed for %d\n", values[i]); // Hafıza hatası olursa uyar
-		}
-	}
-	return (0);
+    (void)i; // i değişkenini kullanmadığımız için hata almamak adına bu şekilde belirtiyoruz
+    if (c >= 'a' && c <= 'z')
+        return (c - 32); // Küçük harfi büyük harfe çevirir
+    return c;
 }
 
+// Karakteri küçük harfe çeviren fonksiyon
+char tolower_function(unsigned int i, char c)
+{
+    (void)i; // i değişkenini kullanmadığımız için hata almamak adına bu şekilde belirtiyoruz
+    if (c >= 'A' && c <= 'Z')
+        return (c + 32); // Büyük harfi küçük harfe çevirir
+    return c;
+}
+
+int main(void)
+{
+    char *original_str = "Hello World!";
+    
+    // Büyük harfe çevirme testi
+    char *result_upper = ft_strmapi(original_str, &toupper_function);
+    if (result_upper)
+    {
+        printf("Original String: %s\n", original_str);
+        printf("Uppercase String: %s\n", result_upper);
+        free(result_upper); // malloc ile oluşturulan stringi serbest bırak
+    }
+    
+    // Küçük harfe çevirme testi
+    char *result_lower = ft_strmapi(original_str, &tolower_function);
+    if (result_lower)
+    {
+        printf("Lowercase String: %s\n", result_lower);
+        free(result_lower); // malloc ile oluşturulan stringi serbest bırak
+    }
+
+    return 0;
+}
