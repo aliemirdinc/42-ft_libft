@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:59:03 by aldinc            #+#    #+#             */
-/*   Updated: 2024/10/07 11:59:03 by aldinc           ###   ########.fr       */
+/*   Updated: 2024/10/14 15:36:37 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-char	*allocate_word(const char *s, int start, int end)
+static char	*allocate_word(const char *s, int start, int end)
 {
 	char	*word;
 	int		i;
@@ -54,7 +54,20 @@ char	*allocate_word(const char *s, int start, int end)
 	return (word);
 }
 
-static void	fill_result(char **result, char const *s, char c)
+static void	free_words(char **words, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(words[i]);
+		i++;
+	}
+	free(words);
+}
+
+static int	fill_result(char **result, char const *s, char c)
 {
 	int	i;
 	int	word_index;
@@ -69,12 +82,16 @@ static void	fill_result(char **result, char const *s, char c)
 			start = i;
 			while (s[i] && s[i] != c)
 				i++;
-			result[word_index++] = allocate_word(s, start, i);
+			result[word_index] = allocate_word(s, start, i);
+			if (!result[word_index])
+				return (free_words(result, word_index), 0);
+			word_index++;
 		}
 		else
 			i++;
 	}
 	result[word_index] = NULL;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -88,6 +105,7 @@ char	**ft_split(char const *s, char c)
 	result = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
-	fill_result(result, s, c);
+	if (!fill_result(result, s, c))
+		return (NULL);
 	return (result);
 }

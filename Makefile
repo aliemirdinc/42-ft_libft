@@ -22,11 +22,10 @@ $(NAME):
 	gcc $(FLAG) -c $(SRC)
 	ar -rc $(NAME) $(OBJ)
 bonus:
-	gcc $(FLAG) -c $(BONUS)
+	gcc $(FLAG) -c $(SRC) $(BONUS)
 	ar -rc $(NAME) $(BONUS_OBJ)
 clean:
-	/bin/rm -f  $(OBJ)
-	/bin/rm -f  $(BONUS_OBJ)
+	/bin/rm -f  $(OBJ)	$(BONUS_OBJ)
 fclean: clean
 	/bin/rm -f $(NAME)
 re: fclean all

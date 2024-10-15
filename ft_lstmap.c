@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:57:57 by aldinc            #+#    #+#             */
-/*   Updated: 2024/10/07 11:58:00 by aldinc           ###   ########.fr       */
+/*   Updated: 2024/10/10 19:40:13 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_elem;
+	void	*content;
 
+	if (!lst || !f || !del)
+		return (NULL);
 	new_list = NULL;
-	new_elem = NULL;
 	while (lst)
 	{
-		new_elem = ft_lstnew(f(lst->content));
+		content = f(lst->content);
+		new_elem = ft_lstnew(content);
 		if (!new_elem)
 		{
+			del(content);
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}

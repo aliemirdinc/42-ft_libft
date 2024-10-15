@@ -6,7 +6,7 @@
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 12:00:47 by aldinc            #+#    #+#             */
-/*   Updated: 2024/10/07 18:04:44 by aldinc           ###   ########.fr       */
+/*   Updated: 2024/10/09 14:39:02 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		substr[0] = '\0';
 		return (substr);
 	}
-	if (start >= s_len)
-		return ((char *)malloc(1));
 	if (len > s_len - start)
 		len = s_len - start;
 	substr = (char *)malloc(len + 1);
