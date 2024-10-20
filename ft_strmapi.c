@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 12:00:08 by aldinc            #+#    #+#             */
-/*   Updated: 2024/10/07 12:00:09 by aldinc           ###   ########.fr       */
+/*   Created: 2024/10/15 15:21:33 by aldinc            #+#    #+#             */
+/*   Updated: 2024/10/15 15:21:34 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (i < len)
 	{
-		result[i] = f(i, s[i]);
+		result[i] = (*f)(i, s[i]);
 		i++;
 	}
 	result[len] = '\0';

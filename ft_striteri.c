@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldinc <aldinc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 11:59:22 by aldinc            #+#    #+#             */
-/*   Updated: 2024/10/07 11:59:23 by aldinc           ###   ########.fr       */
+/*   Created: 2024/10/15 15:21:07 by aldinc            #+#    #+#             */
+/*   Updated: 2024/10/15 15:21:08 by aldinc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
