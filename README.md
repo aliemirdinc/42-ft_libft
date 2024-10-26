@@ -1,15 +1,6 @@
 Libft
 Libft, C programlama dili için yazılmış bir kütüphane projesidir. Bu projede, standart kütüphanedeki fonksiyonların yeniden yazılması ve işlevsel ek fonksiyonların geliştirilmesi hedeflenmiştir. Proje, C dilinde uygulama geliştirirken daha kapsamlı ve etkili bir fonksiyon seti sunar.
 
-İçindekiler:
-
-Proje Hakkında
-Fonksiyonlar
-Kullanım
-Kurulum
-Bonus Fonksiyonlar
-
-
 Proje Hakkında:
 Libft projesinin amacı, libc'deki temel fonksiyonların yeniden yazılması ve ek olarak kullanışlı fonksiyonlar içeren bir C kütüphanesi oluşturulmasıdır. Bu proje sayesinde öğrenciler, C dilindeki çeşitli veri yapıları ve fonksiyonları daha derinlemesine öğrenir ve uygulama geliştirme süreçlerinde kendi kütüphanelerini oluşturma pratiği kazanır.
 
@@ -25,15 +16,15 @@ Bu bölümde libc'de olmayan veya farklı formda olan fonksiyonlar geliştirilmi
 Bonus Fonksiyonlar:
 Bonus kısmında, bağlantılı listeleri (linked lists) manipüle eden fonksiyonlar yazılmıştır. Bu fonksiyonlar şunları içerir:
 
-ft_lstnew
-ft_lstadd_front
-ft_lstsize
-ft_lstlast
-ft_lstadd_back
-ft_lstdelone
-ft_lstclear
-ft_lstiter
-ft_lstmap
+- ft_lstnew
+- ft_lstadd_front
+- ft_lstsize
+- ft_lstlast
+- ft_lstadd_back
+- ft_lstdelone
+- ft_lstclear
+- ft_lstiter
+- ft_lstmap
 
 Kurulum:
 Proje klasörüne gidin.
